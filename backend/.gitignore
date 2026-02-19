@@ -44,8 +44,8 @@ coverage.xml
 .mypy_cache/
 
 # Render / deployment artifacts
-render.yaml
-Procfile
+# render.yaml  <-- Removed to allow tracking
+# Procfile     <-- Removed to allow tracking
 
 # IDE files
 .idea/
