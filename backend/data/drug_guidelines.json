@@ -3,17 +3,122 @@
     "PM": {
       "risk_label": "Ineffective",
       "severity": "high",
-      "recommendation": "Avoid clopidogrel."
+      "recommendation": "Avoid clopidogrel. Patient is a Poor Metabolizer of CYP2C19 — drug cannot be activated. Consider prasugrel or ticagrelor as alternatives."
     },
     "IM": {
       "risk_label": "Adjust Dosage",
       "severity": "moderate",
-      "recommendation": "Consider alternative therapy."
+      "recommendation": "Consider alternative antiplatelet therapy. Intermediate Metabolizer status reduces clopidogrel efficacy."
     },
     "NM": {
       "risk_label": "Safe",
       "severity": "none",
-      "recommendation": "Standard dosing."
+      "recommendation": "Standard clopidogrel dosing is appropriate for this Normal Metabolizer."
+    },
+    "RM": {
+      "risk_label": "Safe",
+      "severity": "none",
+      "recommendation": "Standard dosing. Rapid Metabolizer — monitor for potential over-activation."
+    },
+    "URM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "moderate",
+      "recommendation": "Ultra-rapid Metabolizer. Slightly elevated activation — monitor platelet response."
+    }
+  },
+  "CODEINE": {
+    "PM": {
+      "risk_label": "Ineffective",
+      "severity": "high",
+      "recommendation": "Avoid codeine. Poor Metabolizer of CYP2D6 — codeine cannot be converted to morphine. Use non-opioid analgesics."
+    },
+    "IM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "moderate",
+      "recommendation": "Use lower codeine dose with caution. Intermediate Metabolizer may have reduced analgesic effect."
+    },
+    "NM": {
+      "risk_label": "Safe",
+      "severity": "none",
+      "recommendation": "Standard codeine dosing is appropriate for Normal Metabolizers."
+    },
+    "RM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "moderate",
+      "recommendation": "Use with caution. Rapid Metabolizer may convert codeine to morphine faster — risk of adverse effects."
+    },
+    "URM": {
+      "risk_label": "Toxic",
+      "severity": "critical",
+      "recommendation": "CONTRAINDICATED. Ultra-rapid Metabolizer — dangerous morphine over-production. Do not use codeine."
+    }
+  },
+  "FLUOROURACIL": {
+    "PM": {
+      "risk_label": "Toxic",
+      "severity": "critical",
+      "recommendation": "CONTRAINDICATED. Poor Metabolizer of DPYD — severe risk of fluorouracil toxicity. Use alternative chemotherapy or drastically reduce dose under specialist supervision."
+    },
+    "IM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "high",
+      "recommendation": "Reduce fluorouracil dose by 50%. Intermediate DPYD Metabolizer has increased toxicity risk. Monitor closely."
+    },
+    "NM": {
+      "risk_label": "Safe",
+      "severity": "none",
+      "recommendation": "Standard fluorouracil dosing is appropriate."
+    }
+  },
+  "WARFARIN": {
+    "PM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "high",
+      "recommendation": "Significantly reduce warfarin dose. CYP2C9 Poor Metabolizer — very slow drug metabolism, high bleeding risk. Use INR monitoring."
+    },
+    "IM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "moderate",
+      "recommendation": "Reduce warfarin starting dose by 25-50%. Intermediate Metabolizer — increased drug exposure and bleeding risk."
+    },
+    "NM": {
+      "risk_label": "Safe",
+      "severity": "none",
+      "recommendation": "Standard warfarin dosing with routine INR monitoring."
+    }
+  },
+  "SIMVASTATIN": {
+    "PM": {
+      "risk_label": "Toxic",
+      "severity": "critical",
+      "recommendation": "CONTRAINDICATED. SLCO1B1 Poor Metabolizer — extremely high simvastatin plasma levels, risk of severe myopathy. Switch to pravastatin or rosuvastatin."
+    },
+    "IM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "moderate",
+      "recommendation": "Use lower simvastatin dose (max 20mg/day). Intermediate SLCO1B1 function increases myopathy risk. Monitor CK levels."
+    },
+    "NM": {
+      "risk_label": "Safe",
+      "severity": "none",
+      "recommendation": "Standard simvastatin dosing is appropriate."
+    }
+  },
+  "AZATHIOPRINE": {
+    "PM": {
+      "risk_label": "Toxic",
+      "severity": "critical",
+      "recommendation": "CONTRAINDICATED. TPMT Poor Metabolizer — risk of life-threatening myelosuppression. Consider alternative immunosuppressant."
+    },
+    "IM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "high",
+      "recommendation": "Reduce azathioprine dose by 30-70%. Intermediate TPMT activity — elevated toxicity risk. Monitor blood counts frequently."
+    },
+    "NM": {
+      "risk_label": "Safe",
+      "severity": "none",
+      "recommendation": "Standard azathioprine dosing is appropriate."
     }
   }
 }

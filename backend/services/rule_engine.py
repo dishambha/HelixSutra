@@ -76,14 +76,34 @@ class CPICRuleEngine:
                 )
                 continue
 
-            # Construct diplotype
-            if len(stars) == 1:
-                diplotype = f"{stars[0]}/{stars[0]}"
+            # Construct diplotype — sort canonically by numeric value so
+            # *1/*17 is built correctly (not *17/*1 from raw alphabetical sort)
+            def star_sort_key(s):
+                # Strip leading '*' and extract numeric prefix for sorting
+                numeric = ''.join(filter(lambda c: c.isdigit() or c == '.', s.lstrip('*')))
+                try:
+                    return float(numeric) if numeric else 0
+                except ValueError:
+                    return 0
+
+            stars_sorted = sorted(stars, key=star_sort_key)
+
+            if len(stars_sorted) == 1:
+                diplotype = f"{stars_sorted[0]}/{stars_sorted[0]}"
             else:
-                diplotype = f"{stars[0]}/{stars[1]}"
+                diplotype = f"{stars_sorted[0]}/{stars_sorted[1]}"
 
             # Map to phenotype (short codes PM/IM/NM/etc.)
-            phenotype = cls.PHENOTYPE_MAP.get(gene, {}).get(diplotype, "Unknown")
+            # Try both orderings to handle any remaining key mismatches
+            gene_map = cls.PHENOTYPE_MAP.get(gene, {})
+            phenotype = gene_map.get(diplotype)
+            if phenotype is None and len(stars_sorted) > 1:
+                # Try reversed order
+                diplotype_rev = f"{stars_sorted[1]}/{stars_sorted[0]}"
+                phenotype = gene_map.get(diplotype_rev)
+                if phenotype is not None:
+                    diplotype = diplotype_rev
+            phenotype = phenotype or "Unknown"
 
             # Map phenotype to drug recommendation
             drug_info = cls.DRUG_GUIDELINES.get(drug_name, {}).get(
