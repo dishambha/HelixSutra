@@ -1,0 +1,19 @@
+{
+  "CLOPIDOGREL": {
+    "PM": {
+      "risk_label": "Ineffective",
+      "severity": "high",
+      "recommendation": "Avoid clopidogrel."
+    },
+    "IM": {
+      "risk_label": "Adjust Dosage",
+      "severity": "moderate",
+      "recommendation": "Consider alternative therapy."
+    },
+    "NM": {
+      "risk_label": "Safe",
+      "severity": "none",
+      "recommendation": "Standard dosing."
+    }
+  }
+}

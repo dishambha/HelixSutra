@@ -1,0 +1,65 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# Temporary uploads
+temp_uploads/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python build files
+build/
+dist/
+*.egg-info/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# pytest cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# Render / deployment artifacts
+render.yaml
+Procfile
+
+# IDE files
+.idea/
+
+# Byte-compiled files
+*.pyo
+*.pyd
+
+# SQLite databases (if ever used)
+*.sqlite3
+*.db
+
+# Node modules (if frontend added later)
+node_modules/
+
+# Jupyter
+.ipynb_checkpoints/
