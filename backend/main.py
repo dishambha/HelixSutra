@@ -22,7 +22,11 @@ app = FastAPI(
 # -----------------------------
 # CORS Configuration (Render Ready)
 # -----------------------------
-frontend_url = os.getenv("FRONTEND_URL")
+# -----------------------------
+# CORS Configuration (Render Ready)
+# -----------------------------
+frontend_url = os.getenv("FRONTEND_URL", "")
+backend_domain = os.getenv("BACKEND_DOMAIN", "helixsutra.debugninjas.tech")
 
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
@@ -31,8 +35,18 @@ ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
 ]
 
+# Add production domains
+if backend_domain:
+    ALLOWED_ORIGINS.extend([
+        f"https://{backend_domain}",
+        f"http://{backend_domain}",
+    ])
+
 if frontend_url:
     ALLOWED_ORIGINS.append(frontend_url)
+
+# For development, allow all origins (uncomment if needed)
+# ALLOWED_ORIGINS = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -126,3 +140,4 @@ async def analyze_pharmacogenomics(file: UploadFile = File(...), drug: str = For
         # Cleanup file
         if os.path.exists(file_path):
             os.remove(file_path)
+
