@@ -2,6 +2,10 @@ import os
 import json
 from typing import Dict
 from openai import OpenAI
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 
 class PharmaGuardLLMService:
@@ -14,11 +18,19 @@ class PharmaGuardLLMService:
     """
 
     def __init__(self):
-        api_key = os.getenv("GROQ_API_KEY")
+        # Load environment variables at initialization
+        load_dotenv()
+        # Accept multiple key names to avoid deployment typos
+        api_key_candidates = ["GROQ_API_KEY", "GROQ_KEY", "GROQAPI_KEY"]
+        api_key = next((os.getenv(key) for key in api_key_candidates if os.getenv(key)), None)
 
         if not api_key:
-            raise ValueError("GROQ_API_KEY environment variable not set.")
+            # Keep running with a graceful fallback when the key is missing
+            self.client = None
+            self.client_error = "GROQ API key missing. Set GROQ_API_KEY in the environment."
+            return
 
+        self.client_error = None
         self.client = OpenAI(
             api_key=api_key,
             base_url="https://api.groq.com/openai/v1"
@@ -33,6 +45,16 @@ class PharmaGuardLLMService:
         evaluations = rule_engine_output.get("evaluations", [])
 
         clinical_facts = json.dumps(evaluations, indent=2)
+
+        # If the key is missing, return a safe fallback instead of throwing
+        if not self.client:
+            return {
+                "drug": drug,
+                "clinical_explanation": "LLM disabled: missing GROQ API key (set GROQ_API_KEY).",
+                "mechanism": "LLM unavailable due to configuration.",
+                "confidence": "Low",
+                "error": self.client_error,
+            }
 
         prompt = f"""
 You are a clinical pharmacogenomics expert.

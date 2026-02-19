@@ -2,6 +2,10 @@ import os
 import uuid
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 from models import PharmaGuardResponse
 from services.vcf_parcer import PharmaGuardVCFParser  # ✅ fixed typo
@@ -22,9 +26,6 @@ app = FastAPI(
 # -----------------------------
 # CORS Configuration (Render Ready)
 # -----------------------------
-# -----------------------------
-# CORS Configuration (Render Ready)
-# -----------------------------
 frontend_url = os.getenv("FRONTEND_URL", "")
 backend_domain = os.getenv("BACKEND_DOMAIN", "helixsutra.debugninjas.tech")
 
@@ -33,6 +34,8 @@ ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://localhost:3000",
+    "https://127.0.0.1:5173",
 ]
 
 # Add production domains
@@ -40,13 +43,20 @@ if backend_domain:
     ALLOWED_ORIGINS.extend([
         f"https://{backend_domain}",
         f"http://{backend_domain}",
+        f"https://www.{backend_domain}",
     ])
 
 if frontend_url:
-    ALLOWED_ORIGINS.append(frontend_url)
+    ALLOWED_ORIGINS.extend([
+        frontend_url,
+        frontend_url.replace("https://", "http://"),
+    ])
 
-# For development, allow all origins (uncomment if needed)
-# ALLOWED_ORIGINS = ["*"]
+# For development/testing - allow all origins (TEMPORARY)
+# Comment this out in production and use specific origins above
+ALLOWED_ORIGINS = ["*"]
+
+print(f"🔒 CORS Allowed Origins: {ALLOWED_ORIGINS}")
 
 app.add_middleware(
     CORSMiddleware,
