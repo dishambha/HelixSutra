@@ -24,10 +24,10 @@ Built for the **RIFT 2026 HealthTech Hackathon — Pharmacogenomics / Explainabl
 # 🌐 Live Demo
 
 **Web Application:**
-👉 [https://your-frontend-url.netlify.app](https://helixsutra.netlify.app/)
+👉 [https://helixsutra.netlify.app](https://helixsutra.netlify.app/)
 
 **Backend API:**
-👉 [https://your-backend-url.onrender.com](https://helixsutra.onrender.com)
+👉 [https://helixsutra.onrender.com](https://helixsutra.onrender.com)
 
 **Telegram Bot username:**
 👉 @helixsutrabot
@@ -203,8 +203,8 @@ Receive:
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/pharmaguard.git
-cd pharmaguard
+git clone https://github.com/dishambha/HelixSutra.git
+cd helixsutra
 ```
 
 ---
