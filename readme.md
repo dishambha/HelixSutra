@@ -1,12 +1,5 @@
-Here is a **clean README content (PDF-style format)** based on your hackathon problem statement and your deployed architecture (Netlify frontend + Render backend + Telegram bot).
 
-I have aligned it with the **RIFT 2026 mandatory submission requirements** and schema expectations from your PDF. 
-
-You can copy this into `README.md` or export it to PDF directly.
-
----
-
-# 🧬 PharmaGuard — AI-Powered Pharmacogenomic Risk Analyzer
+# 🧬 HelixSutra — AI-Powered Pharmacogenomic Risk Analyzer
 
 **PharmaGuard** is an AI-driven precision medicine platform that analyzes patient genetic variants from **VCF files** to generate personalized drug response risk predictions, clinical recommendations, and biological explanations.
 
