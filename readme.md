@@ -1,7 +1,7 @@
 
 # 🧬 HelixSutra — AI-Powered Pharmacogenomic Risk Analyzer
 
-**PharmaGuard** is an AI-driven precision medicine platform that analyzes patient genetic variants from **VCF files** to generate personalized drug response risk predictions, clinical recommendations, and biological explanations.
+**helixsutra** is an AI-driven precision medicine platform that analyzes patient genetic variants from **VCF files** to generate personalized drug response risk predictions, clinical recommendations, and biological explanations.
 
 The system combines:
 
@@ -39,7 +39,7 @@ LinkedIn Demo:
 👉 [https://linkedin.com/your-demo-link](https://linkedin.com/your-demo-link)
 
 Hashtags:
-#RIFT2026 #PharmaGuard #Pharmacogenomics #AIinHealthcare
+#RIFT2026 #helixsutra #Pharmacogenomics #AIinHealthcare
 
 ---
 
@@ -158,7 +158,7 @@ Form Data:
 
 # 📄 Report Generation
 
-PharmaGuard automatically generates:
+helixsutra automatically generates:
 
 * `report.json` — structured machine-readable output
 * `report.pdf` — clinician-friendly medical report
@@ -273,7 +273,7 @@ Production Features:
 
 # ⚠️ Medical Disclaimer
 
-PharmaGuard provides **informational pharmacogenomic insights only**.
+helixsutra provides **informational pharmacogenomic insights only**.
 
 It is **not a medical diagnostic system** and should not replace professional clinical judgment.
 
