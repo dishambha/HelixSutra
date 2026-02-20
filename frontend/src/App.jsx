@@ -144,7 +144,7 @@ export default function App() {
             </svg>
             <span className="text-xs font-medium">HIPAA Compliant Data Processing</span>
           </div>
-          <div className="text-xs">© 2025 PharmaGuard Precision Medicine. All rights reserved.</div>
+          <div className="text-xs">© 2026 Helixsutra Precision Medicine. All rights reserved.</div>
         </div>
       </footer>
     </div>
