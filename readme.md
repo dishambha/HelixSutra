@@ -24,12 +24,12 @@ Built for the **RIFT 2026 HealthTech Hackathon — Pharmacogenomics / Explainabl
 # 🌐 Live Demo
 
 **Web Application:**
-👉 [https://your-frontend-url.netlify.app](https://your-frontend-url.netlify.app)
+👉 [https://your-frontend-url.netlify.app](https://helixsutra.netlify.app/)
 
 **Backend API:**
-👉 [https://your-backend-url.onrender.com](https://your-backend-url.onrender.com)
+👉 [https://your-backend-url.onrender.com](https://helixsutra.onrender.com)
 
-**Telegram Bot:**
+**Telegram Bot username:**
 👉 @helixsutrabot
 
 Bot Flow:
