@@ -36,7 +36,7 @@ Bot Flow:
 # 🎥 Demo Video
 
 LinkedIn Demo:
-👉 [https://linkedin.com/your-demo-link](https://linkedin.com/your-demo-link)
+👉 https://www.linkedin.com/posts/dishambha-awasthi_helixsutra-ai-powered-pharmacogenomic-ugcPost-7430428882354356224-7Az1?utm_source=share&utm_medium=member_android&rcm=ACoAAD5lY90BqqRt2h6xFPH8KzH2KsEr89_EQ4Q
 
 Hashtags:
 #RIFT2026 #helixsutra #Pharmacogenomics #AIinHealthcare
